@@ -1,0 +1,42 @@
+Enunciado
+Este projeto é uma aplicação Python que recomenda filmes com base no gênero escolhido pelo usuário. Utilizando a biblioteca Pandas, ele filtra filmes por gênero e exibe os detalhes como título, avaliação média e ano de lançamento. O código inclui um conjunto de dados fictício com 25 filmes, cobrindo gêneros como Ficção Científica, Drama, Ação, Animação e Terror.
+
+README.md
+markdown
+# Recomendador de Filmes por Gênero
+
+Este projeto é uma aplicação Python que recomenda filmes com base no gênero escolhido pelo usuário. Utilizando a biblioteca Pandas, o programa filtra filmes por gênero e exibe os detalhes como título, avaliação média e ano de lançamento.
+
+## Funcionalidades
+
+- Listagem de gêneros disponíveis
+- Filtragem de filmes por gênero
+- Exibição de título, avaliação média e ano de lançamento dos filmes recomendados
+
+## Como Usar
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/recomendador-filmes.git
+   cd recomendador-filmes
+Instale as dependências necessárias:
+
+bash
+pip install pandas
+Execute a aplicação:
+
+bash
+python main.py
+Siga as instruções na tela para selecionar um gênero e receber recomendações de filmes.
+
+Estrutura do Projeto
+main.py: Arquivo principal que contém a lógica da aplicação e o conjunto de dados fictício de filmes.
+
+README.md: Este arquivo, contendo informações sobre o projeto.
+
+.gitignore: Arquivo para ignorar arquivos desnecessários no repositório.
+
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
+
+Licença
