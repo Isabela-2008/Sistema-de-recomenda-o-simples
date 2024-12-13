@@ -1,0 +1,28 @@
+Licença
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
+
+
+### .gitignore
+```markdown
+# Arquivos de sistema operacionais
+.DS_Store
+Thumbs.db
+
+# Ambientes Virtais
+env/
+venv/
+
+# Arquivos Python Compilados
+__pycache__/
+*.pyc
+
+# Arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Arquivos de log e cache
+*.log
+*.cache
+
+# Outros arquivos temporários
+*.tmp
