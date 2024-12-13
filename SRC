@@ -1,0 +1,99 @@
+import pandas as pd  
+
+# Criando o conjunto de dados fictício para filmes  
+movies_data = {  
+    'movie_id': range(1, 26),  
+    'title': [  
+        'Inception',  
+        'The Matrix',  
+        'Interstellar',  
+        'Blade Runner 2049',  
+        'A.I. Artificial Intelligence',  
+        'The Godfather',  
+        'Pulp Fiction',  
+        'The Shawshank Redemption',  
+        'Forrest Gump',  
+        'Fight Club',  
+        'Avatar',  
+        'The Dark Knight',  
+        'John Wick',  
+        'Mad Max: Fury Road',  
+        'Gladiator',  
+        'Toy Story',  
+        'Finding Nemo',  
+        'Shrek',  
+        'The Lion King',  
+        'Frozen',  
+        'The Exorcist',  
+        'Halloween',  
+        'The Texas Chain Saw Massacre',  
+        'The Conjuring',  
+        'Psycho'  
+    ],  
+    'genre': [  
+        'Ficção Científica',  
+        'Ficção Científica',  
+        'Ficção Científica',  
+        'Ficção Científica',  
+        'Ficção Científica',  
+        'Drama',       
+        'Drama',       
+        'Drama',  
+        'Drama',  
+        'Drama',  
+        'Ação',        
+        'Ação',        
+        'Ação',        
+        'Ação',        
+        'Ação',        
+        'Animação',    
+        'Animação',    
+        'Animação',    
+        'Animação',    
+        'Animação',    
+        'Terror',      
+        'Terror',      
+        'Terror',      
+        'Terror',      
+        'Terror'       
+    ],  
+    'average_rating': [  
+        8.8, 8.7, 8.6, 8.0, 7.8,  
+        9.2, 8.9, 9.3, 8.6, 8.8,  
+        7.8, 9.0, 7.4, 8.1, 8.5,  
+        8.3, 8.1, 8.2, 7.9, 7.5,  
+        8.0, 7.8, 7.5, 7.5, 8.5  
+    ],  
+    'release_year': [  
+        2010, 1999, 2014, 2017, 2001,  
+        1972, 1994, 1994, 1994, 1999,  
+        2009, 2008, 2014, 2015, 2000,  
+        1995, 2003, 2015, 2016, 2017,  
+        1973, 1978, 1974, 2013, 1960  
+    ]  
+}  
+
+# Criar o DataFrame  
+movies_df = pd.DataFrame(movies_data)  
+
+# Função para recomendar filmes por gênero  
+def recommend_movies_by_genre(genre, movies_df):  
+    return movies_df[movies_df['genre'].str.contains(genre, case=False)]  
+
+# Exibir opções de gêneros disponíveis  
+genres = movies_df['genre'].unique().tolist()  
+print("Gêneros disponíveis:")  
+for genre in genres:  
+    print(f"- {genre}")  
+
+# Solicitar seleção de gênero do usuário  
+user_genre_preference = input("\nDigite o gênero de filme que você gosta: ")  
+
+# Obter e exibir recomendações com base no gênero selecionado  
+recommended_movies_genre = recommend_movies_by_genre(user_genre_preference, movies_df)  
+
+print(f"\nFilmes recomendados para o gênero '{user_genre_preference}':")  
+if not recommended_movies_genre.empty:  
+    print(recommended_movies_genre[['title', 'average_rating', 'release_year']])  
+else:  
+    print("Nenhum filme encontrado para esse gênero.")
